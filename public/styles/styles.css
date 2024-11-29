@@ -26,29 +26,6 @@ body{
     margin: 0;
 }
 
-.link{
-    z-index: 500;
-    opacity: 1;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
-    transition: 0.4s ease;
-}
-.link a{
-    color: var(--lightGray);
-    font-size: 1.2em;
-}
-.link a:not(:last-of-type){
-    margin-bottom: 20px;
-}
-.blackLink i{
-    color: var(--black);
-}
-
 section:not(.presentation){
     padding: 100px 150px;
     display: flex;
@@ -70,6 +47,13 @@ section:not(.presentation){
 section > p{
     text-align: center;
     margin: 0 0 70px 0;
+}
+
+h3{
+    font-size: 0.9em;
+    letter-spacing: 0.05em;
+    word-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 img.icons{
@@ -155,7 +139,28 @@ img.icons{
 .nav.header-black ul a:hover, .nav.header-black ul a.active {
     color: var(--white);
 }
-
+.link{
+    z-index: 500;
+    opacity: 1;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    transition: 0.4s ease;
+}
+.link a{
+    color: var(--lightGray);
+    font-size: 1.2em;
+}
+.link a:not(:last-of-type){
+    margin-bottom: 20px;
+}
+.blackLink i{
+    color: var(--black);
+}
 .burger_menu{
     display: none;
     flex-direction: column;
@@ -175,15 +180,9 @@ img.icons{
     width: 60%;
 }
 
-h3{
-    font-size: 0.9em;
-    letter-spacing: 0.05em;
-    word-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
 /****** Présentation ***********/
 .presentation{
+    position: relative;
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), 
@@ -195,6 +194,18 @@ h3{
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.1);
+}
+.presentation__overlay a {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    cursor: pointer;
+}
+.presentation__overlay a > img{
+    opacity: 0.8;
+    animation: 10s .5s ease-in infinite flotting; 
 }
 .presentation__content{
     height: 100%;
@@ -221,19 +232,6 @@ h3{
     font-weight: 300;
     text-transform: uppercase;
     margin: 20px 0 25px 0;
-}
-.presentation__content a {
-    position: relative;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 2px var(--white) solid;
-    border-radius: 3px;
-    color: var(--white);
-    font-size: 0.9em;
-    letter-spacing: 0.25em;
-    word-spacing: 0.1em;
-    padding: 10px 25px;
-    cursor: pointer;
 }
 
 /****** About ***********/
@@ -328,7 +326,7 @@ h3{
 }
 .project-content:hover > .project-info{
     opacity: 1;
-    background-color: var(--black);
+    background-color: rgba(0, 0, 0, 0.7);
     transition:  0.5s;
 }
 .project-content:hover > img{
@@ -397,7 +395,7 @@ h3{
     align-items: center;
     justify-content: center;
     line-height: 60px;
-    border-radius: 50% 0% 50% 50%;
+    border-radius: 100px;
     background: var(--black);
     color: var(--white);
     font-size: 1.4em;
@@ -467,13 +465,11 @@ h3{
     align-items: center;
     justify-content: center;
     line-height: 80px;
-    border-radius: 50% 50% 0% 50%;
-    transform: rotate(-313deg);
+    border-radius: 100px;
     background: var(--black);
 }
 .flip-card-front .icons{
     display: inline-block;
-    transform: rotate(313deg);
 }
 .flip-card-front h3{
     font-weight: 700;
