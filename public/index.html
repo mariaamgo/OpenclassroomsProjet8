@@ -27,7 +27,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
 	integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" > -->
 
     <!-- Préchargement des polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,16 +48,28 @@
     <!-- Titre -->
 	<title>Maria Amigo - Développeur web Salon-de-Provence</title>
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
+    <link rel="canonical" href="https://mariaamigo.fr" />
 
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
-          "@type": "Person",
+          "@type": "Organization",
           "email": "mailto:maria.amigo.07@gmail.com",
-          "jobTitle": "Développeur Web",
-          "name": "Maria Amigo",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "FR",
+            "addressLocality": "Salon-de-Provence",
+            "addressRegion": "Provence-Alpes-Côte-d'Azur",
+            "postalCode": "13300"
+          },
+          "name": "Maria Amigo - Développeur web",
           "telephone": "0750948971",
-          "url": "https://mariaamigo.fr"
+          "url": "https://mariaamigo.fr",
+          "image": "https://mariaamigo.fr/assets/images/maria_amigo.webp",
+          "sameAs": [
+                "https://www.linkedin.com/in/maria-amigo-b14258328/",
+                "https://github.com/mariaamgo"
+            ]
         }
     </script>
 </head>
@@ -94,8 +105,8 @@
                 <div class="presentation__content" id="presentation__content">
                     <h1 class="reveal-1">Maria Amigo</h1>
                     <p class="reveal-2">Développeur web</p>
-                    <a href="#about" class="light reveal-2">Explorer plus</a>
                 </div>
+                <a href="#about" class="light"><img src="./assets/images/icons/angle-double-down.svg" width="30" height="30" alt="Icône double chevrons"></a>
             </div>
         </section>
         <section class="about reveal" id="about">
