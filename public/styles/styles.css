@@ -190,12 +190,12 @@ img.icons{
     background-attachment: fixed;
     background-size: cover; 
 }
-.presentation__overlay{
+.presentation-overlay{
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.1);
 }
-.presentation__overlay a {
+.presentation-link {
     position: absolute;
     bottom: 15px;
     left: 50%;
@@ -203,11 +203,11 @@ img.icons{
     text-decoration: none;
     cursor: pointer;
 }
-.presentation__overlay a > img{
+.presentation-link > img{
     opacity: 0.8;
     animation: 10s .5s ease-in infinite flotting; 
 }
-.presentation__content{
+.presentation-content{
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -215,7 +215,7 @@ img.icons{
     justify-content: center;
     color: var(--white);
 }
-.presentation__content h1{
+.presentation-content h1{
     font-size: 3em;
     letter-spacing: 0.5em;
     word-spacing: 0.1em;
@@ -224,7 +224,7 @@ img.icons{
     font-weight: 400;
     margin: 50px 0 0 0;
 }
-.presentation__content p{
+.presentation-content p{
     font-size: 1.25em;
     text-align: center;
     letter-spacing: 0.75em;
@@ -310,7 +310,7 @@ img.icons{
     transition:  0.5s;
 }
 .project-info{
-    opacity: 0;
+    visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -323,11 +323,11 @@ img.icons{
     color: var(--black);
     font-size: 1.5em;
     background-color: rgba(0, 0, 0, 0);
+    transition:  0.5s;
 }
 .project-content:hover > .project-info{
-    opacity: 1;
+    visibility: visible;
     background-color: rgba(0, 0, 0, 0.7);
-    transition:  0.5s;
 }
 .project-content:hover > img{
     transform: scale(1.2);
@@ -773,6 +773,26 @@ img.icons{
     }
 }
 
+/* Small devices (phones, less than 768px) and landscape format */
+@media (min-width: 320px) and (max-width: 768px) and (orientation: landscape) {
+    .presentation{
+        min-height: 90vh;
+    }
+    .presentation-overlay{
+        height: 90vh;
+    }
+}
+
+/* Small devices (phones, less than 768px) and portrait format */
+@media (min-width: 320px) and (max-width: 768px) and (orientation: portrait) {
+    .presentation{
+        min-height: 40vh;
+    }
+    .presentation-overlay{
+        height: 40vh;
+    }
+}
+
 /* Small devices (phones, less than 768px) */
 @media (min-width: 320px) and (max-width: 768px){ 
     /****** header ***********/
@@ -789,24 +809,18 @@ img.icons{
     
     /****** Presentation ***********/
     .presentation{
-        width: 100%;
-        min-height: 40vh;
-        max-height: 40vh;
         background-attachment: scroll;
     }
-    .presentation__overlay{
-        height: 40vh;
+    .presentation-link {
+        display: none;
     }
-    .presentation__content h1{
+    .presentation-content h1{
         font-size: 1.8em;
         letter-spacing: 0.2em;
         margin-top: 75px;
     }
-    .presentation__content p{
+    .presentation-content p{
         font-size: 1.1em;
-    }
-    .presentation__content a {
-        display: none;
     }
     
     /****** About ***********/
