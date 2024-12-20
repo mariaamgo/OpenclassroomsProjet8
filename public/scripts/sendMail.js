@@ -4,9 +4,13 @@ let userName = document.getElementById('name')
 let userEmail = document.getElementById('email')
 let userMessage = document.getElementById('message')
 
-contactForm.addEventListener('submit', (e) =>{
+// Ajout d'un écouteur d'événement au formulaire pour capter la soumission
+contactForm.addEventListener('submit', (e) =>sendMail(e))
+
+//Fonction qui gère l'envoi des données du formulaire
+const sendMail = function(e){
     // Eviter le comportement par défault du rechargement de la page
-    e.preventDefault()
+    e.preventDefault();
 
     // Envoi d'une alerte si au moins un des champs est vide
     if (!userName.value || !userEmail.value || !userMessage.value) {
@@ -22,29 +26,32 @@ contactForm.addEventListener('submit', (e) =>{
     }
 
     // Création d'un nouvel objet XMLHttpRequest pour envoyer une requête HTTP
-    let xhr = new XMLHttpRequest()
+    let xhr = new XMLHttpRequest();
 
     // Configuration de la requête POST vers le serveur à l'URL racine '/'
-    xhr.open('POST', '/')
+    xhr.open('POST', '/');
 
     // Définition de l'en-tête pour indiquer que les données envoyées sont au format JSON
-    xhr.setRequestHeader('content-type', 'application/json')
+    xhr.setRequestHeader('content-type', 'application/json');
 
     // Déclaration de ce qui doit être fait lorsque la requête est terminée
-    xhr.onload = function(){
-        // Vérification que l'envoi à été un succès 
-        if(xhr.responseText == 'success'){
-            alert('L\'email a été envoyé avec succès !')
-
-            // Vide les champs du formulaire
-            userName.value = ''
-            userEmail.value = ''
-            userMessage.value = ''
-        }else{
-            alert('Quelque chose s\'est mal passé')
-        }
-    }
+    xhr.onload = () => onload(xhr, userName, userEmail, userMessage);
 
     // Envoi des données du formulaire au serveur sous forme de chaîne JSON
-    xhr.send(JSON.stringify(formData))
-})
+    xhr.send(JSON.stringify(formData));
+}
+
+// Fonction qui traite la réponse du serveur une fois la requête terminée
+const onload = function(xhr, userName, userEmail, userMessage){
+    // Vérification que l'envoi à été un succès 
+    if(xhr.responseText == 'success'){
+        alert('L\'email a été envoyé avec succès !')
+
+        // Vide les champs du formulaire
+        userName.value = ''
+        userEmail.value = ''
+        userMessage.value = ''
+    }else{
+        alert('Quelque chose s\'est mal passé')
+    }
+}
