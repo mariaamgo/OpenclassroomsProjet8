@@ -102,6 +102,42 @@ const image = function(gallery, projects, index){
     });
 }
 
+// Variable qui suit l'état d'affichage ou de masquage des projets
+let arrowUp = true;
+const arrowButton = document.querySelector(".skills > img");
+
+// Fonction pour rendre les projets cachés, visibles
+const projectVisible = function(){
+    // Sélection de tous les éléments avec la classe 'skill-hidden'
+    const projectsHidden = document.querySelectorAll('.skill-hidden');
+
+    // Si arrowUp est true, on montre les projets cachés
+    if(arrowUp === true){
+        projectsHidden.forEach(project => {
+            project.classList.remove("hidden"); // Suppression de la classe 'hidden' pour afficher l'élément
+            arrowButton.classList.add("rotate"); // Ajout de la classe 'rotate' pour faire tourner l'icône de flèche
+
+            // Après 500 ms (durée de l'animation), réactivation des interactions et overflow visible
+            setTimeout(() => {
+                project.style.pointerEvents = 'auto';
+                project.style.overflow = 'visible';
+            }, 500); 
+        });
+    }else{
+        projectsHidden.forEach(project => {
+            project.classList.add("hidden"); // Ajout de la classe 'hidden' pour masquer l'élément
+            arrowButton.classList.remove("rotate"); // Retrait de la classe 'rotate' pour réinitialiser la rotation de l'icône de flèche
+            project.style.pointerEvents = 'none'; // Désactivation des interactions (empêche le hover ou les clics)
+            project.style.overflow = 'hidden';  // Cache l'overflow pour éviter tout débordement
+        });
+    }
+    // Alterne l'état de la flèche pour savoir si on est en mode "affiché" ou "caché"
+    arrowUp = !arrowUp;
+}
+
+// Ajout d'un écouteur d'événement sur le clic de l'icône de flèche (arrowButton)
+arrowButton.addEventListener("click", projectVisible);
+
 // Définition du seuil d'intersection pour déclencher l'animation
 const ratio = .1;
 
@@ -146,12 +182,11 @@ const openMenu = function (){
         // Si le menu est fermé, on le fait apparaître
         if(click === true){
             list.style.transform = "translateY(0)"; // Fait apparaître le menu
-            click = false; // Changement de l'état pour signaler que le menu est ouvert
         }else{
             list.style.transform = `translateY(-250px)`; // Cache le menu
-            click = true; // Changement de l'état pour signaler que le menu est fermé
         }
     }
+    click = !click; // Changement de l'état pour fermer ou ouvrir le menu
 }
 
 // Ajout de l'événement au clic sur le bouton du menu burger
