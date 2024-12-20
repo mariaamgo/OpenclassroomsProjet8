@@ -41,8 +41,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700&display=swap" rel="stylesheet">
     
     <!-- Scripts -->
-    <script type="module" src="./scripts/script.js" defer></script>
-    <script type="module" src="./scripts/modal.js" defer></script>
+    <script type="module" src="./scripts/script.js"></script>
+    <script type="module" src="./scripts/modal.js"></script>
     <script src="./scripts/sendMail.js" defer></script>
 
     <!-- Titre -->
@@ -173,7 +173,25 @@
                         Débugger un site web grâce aux Chrome DevTools<br>
                         Rédiger un cahier de recette pour tester un site</p>
                 </div>
+                <div class="skill skill-hidden hidden">
+                    <i class="fas fa-tasks"></i>
+                    <h3>Gestion de projet</h3>
+                    <p>Suivre le projet grâce à un outil de gestion<br>
+                        Rédiger les spécifications techniques d'un projet web<br>
+                        Découper une fonctionnalités en tâches<br>
+                        Présenter la solution technique<br>
+                        Mettre en place une veille technologique</p>
+                </div>
+                <div class="skill skill-hidden hidden">
+                    <i class="fas fa-wrench"></i>
+                    <h3>Outils de développeurs</h3>
+                    <p>Versionner son projet avec Git et Github ou Gitlab<br>
+                        Installer un environnement de développement front-end<br>
+                        Déployer et synchroniser les fichiers d'un site via FTP avec FileZilla<br>
+                        Configurer un serveur et installer des dépendances via PuTTY</p>
+                </div>
             </div>
+            <img class="icons" src="./assets/icons/arrow-up.svg" width="25" height="25" alt="Afficher la suite des projets">
         </section>
         <section class="learn-more reveal" id="learn-more">
             <h2 class="section-title learn-more-title reveal-1">En savoir plus</h2>
@@ -258,15 +276,15 @@
         <a href="#modal" class="link-modal js-modal" data-title="Mentions légales" aria-label="Ouvrir la fenêtre modale">Mentions légales</a>
     </footer>
 
-    <aside id="modal" class="modal" aria-hidden="true" role="dialog" style="display: none">
+    <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" style="display: none">
         <div class="modal-wrapper js-modal-stop">
             <i class="fa-solid fa-xmark js-modal-close"></i>
-            <h2 class="project-title">Titre</h2>
-            <div class="modal-content">
+            <h2 id="modal-title" class="project-title">Titre</h2>
+            <div id="modal-description" class="modal-content">
             </div>
             <button class="js-modal-close" aria-label="Fermer la boîte modale">Fermer</button>
         </div>
-    </aside>
+    </div>
 </body>
 
 </html>
