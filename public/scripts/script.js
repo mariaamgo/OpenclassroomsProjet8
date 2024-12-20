@@ -85,7 +85,7 @@ const portfolio = function(projects) {
 // Fonction qui génère les images de la galerie
 const image = function(gallery, projects, index){
     // Création du contenu HTML pour chaque projet
-    const project = `<a href="#modal" class="link-modal js-modal reveal-${index+3}" data-title="${projects[index].title}" aria-label="Ouvrir la fenêtre modale">
+    const project = `<a href="#modal" class="link-modal js-modal reveal-1" data-title="${projects[index].title}" aria-label="Ouvrir la fenêtre modale">
                             <div class="project-content">
                                 <img src="${projects[index].cover}" alt="Mockup de page web du site de ${projects[index].title}" />
                                 <div class="project-info">
