@@ -56,6 +56,10 @@ h3{
     text-transform: uppercase;
 }
 
+button{
+    cursor: pointer;
+}
+
 img.icons{
     width: 50px;
 }
@@ -516,34 +520,17 @@ img.icons{
     margin-bottom: 25px;
 }
 .contact > form > button{
-    position: relative;
     background-color: var(--black);
-    border: none;
     color: var(--white);
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 0.1em;
     word-spacing: 0.1em;
-    z-index: 1;
-    border: 2px var(--black) solid;
-}
-.contact > form > button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--white);
-    transition: all .5s;
-    z-index: -1;
-    transform: scale(0);
+    transition: .3s;
 }
 .contact > form > button:hover {
+    background-color: var(--white);
     color: var(--black);
-}
-.contact > form > button:hover::before {
-    transform: scale(1);
 }
 
 /****** Footer ***********/
@@ -623,12 +610,15 @@ img.icons{
     color: var(--white);
     padding: 10px 25px;
     margin-top: 30px;
-    border: none;
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 0.1em;
     border-radius: 3px;
-    cursor: pointer;
+    transition: .3s;
+}
+.modal-wrapper > button:hover{
+    background-color: var(--white);
+    color: var(--black);
 }
 .modal-content > h3{
     font-weight: 600;
