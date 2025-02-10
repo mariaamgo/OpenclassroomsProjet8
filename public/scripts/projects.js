@@ -92,5 +92,20 @@ export const projects = [
         "Gestion des fichiers utilisateurs"
       ],
       "github" : "https://github.com/mariaamgo/OpenclassroomsProjet7.git"
-  }
+  },
+  {
+    "id": "5",
+    "title": "Cartographie Incidents Travaux HTA/BT",
+    "cover": "./assets/projects/website_cartographie.webp",
+    "description": "La cartographie Incidents Travaux HTA/BT est une cartographie que j'ai développé dans le cadre de mon apprentissage au sein de Enedis. Elle permet aux agents de visualiser en temps réél les incidents et les travaux HTA et BT en cours.",
+    "difficulties": [
+      "<strong>Affichage en temps réel :</strong> Pour garantir une mise à jour dynamique des incidents et travaux en cours, j'ai utilisé une fonction AJAX qui effectue un appel à une page de requête SQL toutes les 30 secondes. Cela permet aux agents d’avoir des données actualisées sans recharger la page."
+    ],
+    "skills": [
+      "API Leaflet",
+      "AJAX",
+      "PHP",
+      "SQL"
+    ]
+}
 ]
