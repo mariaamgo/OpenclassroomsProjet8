@@ -609,7 +609,6 @@ img.icons{
     position: relative;
     overflow: auto;
     width: 65%;
-    min-height: 500px;
     max-width: calc(100vw - 20px);
     max-height: calc(100vh - 20px);
     padding: 25px;
