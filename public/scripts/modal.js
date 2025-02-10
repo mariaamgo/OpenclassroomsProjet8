@@ -115,7 +115,7 @@ const contentProject = function(projects, index) {
             <ul class="project-difficulties"></ul>
             <h3>Compétences acquises</h3>
             <ul class="project-skills"></ul>
-            <a class="project-github" href="${projects[index].github}" target="_blank">Cliquez pour accéder au code du site</a>`;
+            ${projects[index].github ? `<a class="project-github" href="${projects[index].github}" target="_blank">Cliquez pour accéder au code du site</a>` : ''}`;
 }
 
 // Fonction pour afficher les mentions légales dans la fenêtre modale
